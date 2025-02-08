@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Meeting Assistant",
+    "version": "1.0",
+    "description": "Detects Zoom and Google Meet meetings and assists users.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "host_permissions": ["https://*.zoom.us/*", "https://meet.google.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "128": "icons/icon128.png"
+    }
+  }
+  
