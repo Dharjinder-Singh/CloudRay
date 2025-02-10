@@ -3,16 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!data.meetingData) return;
 
         document.getElementById("yesButton").addEventListener("click", async() => {
-            await fetch("https://1065-2409-40c2-103f-63f5-59a1-ca4d-de21-3adb.ngrok-free.app/extension", {
+            const resp=
+            await fetch("https://ca8f-61-14-206-69.ngrok-free.app/extension", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data.meetingData),
             })
-            .then(response => response.json())
-            .then(data => console.log("Server response:", data))
-            .catch(error => console.error("Error:", error));
-
+            data=await resp.json();
+            if(resp.ok){
             window.close();
+            }
         });
 
         document.getElementById("noButton").addEventListener("click", () => window.close());
